@@ -1,0 +1,9 @@
+name: ColorParticle
+version: 1.0.0
+main: Vazzi\ColorParticle\ColorParticle
+api: 3.19.2
+author: Vazzi
+permissions:
+  colorparticle.permission:
+    description: Allow Player to use colored particle
+    default: op
