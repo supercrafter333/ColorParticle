@@ -26,7 +26,7 @@ class ColorParticleCommand extends Command implements PluginIdentifiableCommand
     {
         if(!$sender instanceof Player) return true;
 
-        if(!$sender->hasPermission($this->getPermission())) return true;
+        if(!$this->testPermission($sender)) return true;
 
         $sender->sendForm(new ParticleForm());
 
