@@ -1,5 +1,5 @@
 name: ColorParticle
-version: 1.0.0
+version: 1.2.1
 main: Vazzi\ColorParticle\ColorParticle
 api: 3.19.2
 author: Vazzi
@@ -7,3 +7,28 @@ permissions:
   colorparticle.permission:
     description: Allow Player to use colored particle
     default: op
+    children:
+      all:
+        description: Allow Player to use all Colors
+      red:
+        description: Allow Player to use Red Color
+      green:
+        description: Allow Player to use Green Color
+      blue:
+        description: Allow Player to use Blue Color
+      orange:
+        description: Allow Player to use Orange Color
+      yellow:
+        description: Allow Player to use Yelloq Color
+      white:
+        description: Allow Player to use White Color
+      black:
+        description: Allow Player to use Black Color
+      aqua:
+        description: Allow Player to use Aqua Color
+      pink:
+        description: Allow Player to use Pink Color
+      purple:
+        description: Allow Player to use Purple Color
+      rainbow:
+        description: Allow Player to use Rainbow Color
