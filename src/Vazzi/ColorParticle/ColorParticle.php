@@ -26,7 +26,7 @@ class ColorParticle extends PluginBase
 	}
 
 
-	const Colors = ["Red", "Green", "Blue", "Orange", "Yellow", "White", "Black", "Aqua", "Pink", "Purple"];
+	const Colors = ["Red", "Green", "Blue", "Orange", "Yellow", "White", "Black", "Aqua", "Pink", "Purple", "Rainbow"];
 
 	public $playerparticle = [];
 
@@ -64,6 +64,8 @@ class ColorParticle extends PluginBase
 				return new DustParticle($player->asVector3()->add(0,0.2,0), 255,20,147);
 			case "Purple":
 				return new DustParticle($player->asVector3()->add(0,0.2,0), 159,0,197);
+			case "Rainbow":
+				return "Rainbow";
 
 
 				//Thanks to https://rgbcolorcode.com

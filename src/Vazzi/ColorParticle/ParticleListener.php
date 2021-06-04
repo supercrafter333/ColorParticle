@@ -17,7 +17,15 @@ class ParticleListener implements Listener
 		if(isset(ColorParticle::getInstance()->playerparticle[$player->getName()])) {
 			if (in_array(ColorParticle::getInstance()->playerparticle[$player->getName()], ColorParticle::Colors)) {
 				if (($color = ColorParticle::getInstance()->translateColor(ColorParticle::getInstance()->playerparticle[$player->getName()], $player)) !== null) {
-					$player->getLevel()->addParticle($color);
+					if($color !== "Rainbow") {
+						$player->getLevel()->addParticle($color);
+					}else{
+						foreach (ColorParticle::Colors as $onecolor){
+							if($onecolor !== "Rainbow") {
+								$player->getLevel()->addParticle(ColorParticle::getInstance()->translateColor($onecolor, $player));
+							}
+						}
+					}
 				}
 
 			}
