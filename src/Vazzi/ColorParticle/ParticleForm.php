@@ -34,14 +34,20 @@ class ParticleForm implements Form
 
 			if(isset(ColorParticle::Colors[$data])) {
 
-				$player->sendMessage("§aYou are using " . ColorParticle::Colors[$data] . " Particle");
-				ColorParticle::getInstance()->playerparticle[$player->getName()] = ColorParticle::Colors[$data];
+				if($player->hasPermission("colorparticle.permission." . strtolower(ColorParticle::Colors[$data])) or $player->hasPermission("colorparticle.permission.all")) {
+
+					ColorParticle::getInstance()->playerparticle[$player->getName()] = ColorParticle::Colors[$data];
+					$player->sendMessage("§aYou are using " . ColorParticle::Colors[$data] . " Particle");
+
+				}else{
+					$player->sendMessage("§cYou don't have enough permission to use this Color.");
+				}
 
 			}else{
-
-				$player->sendMessage("§aYou cleared your Particle.");
-				unset(ColorParticle::getInstance()->playerparticle[$player->getName()]);
-
+				if(isset(ColorParticle::getInstance()->playerparticle[$player->getName()])) {
+					$player->sendMessage("§aYou cleared your Particle.");
+					unset(ColorParticle::getInstance()->playerparticle[$player->getName()]);
+				}
 			}
 
 		}
@@ -54,4 +60,5 @@ class ParticleForm implements Form
 	{
 		return $this->data;
 	}
+
 }
