@@ -39,6 +39,7 @@ class ColorParticle extends PluginBase
 	{
 		$this->getServer()->getCommandMap()->register("ColorParticle", new ColorParticleCommand());
 		$this->getServer()->getPluginManager()->registerEvents(new ParticleListener(), $this);
+		$this->getScheduler()->scheduleRepeatingTask(new SpawnParticleTask(), 1);
 	}
 
 	public function translateColor($color, Player $player){
