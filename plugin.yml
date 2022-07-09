@@ -1,7 +1,7 @@
 name: ColorParticle
 version: 1.2.2
 main: Vazzi\ColorParticle\ColorParticle
-api: 4.0.0
+api: [4.0.0, 5.0.0]
 author: Vazzi
 permissions:
   colorparticle.permission:
@@ -18,7 +18,7 @@ permissions:
     colorparticle.permission.orange:
       description: Allow Player to use Orange Color
     colorparticle.permission.yellow:
-      description: Allow Player to use Yelloq Color
+      description: Allow Player to use Yellow Color
     colorparticle.permission.white:
       description: Allow Player to use White Color
     colorparticle.permission.black:
