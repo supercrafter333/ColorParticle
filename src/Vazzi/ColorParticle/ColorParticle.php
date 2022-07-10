@@ -46,7 +46,7 @@ class ColorParticle extends PluginBase
         $adminPerm->addChild('colorparticle.permission.rainbow', true);
 	}
 
-	public function translateColor($color, Player $player): DustParticle
+	public function translateColor($color, Player $player): DustParticle|String|null
     {
         return match ($color) {
             "Red" => new DustParticle(new Color(255, 0, 0)),
